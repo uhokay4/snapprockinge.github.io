@@ -3251,7 +3251,6 @@ BlockMorph.prototype.hidePrimitive = function () {
         doDeclareVariables: 'variables'
     };
     cat = dict[this.selector] || this.category;
-    if (cat === 'lists') {cat = 'variables'; }
     ide.flushBlocksCache(cat);
     ide.refreshPalette();
 };

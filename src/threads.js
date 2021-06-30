@@ -1827,7 +1827,6 @@ Process.prototype.doChangePrimitiveVisibility = function (aBlock, hideIt) {
         doDeclareVariables: 'variables'
     };
     cat = dict[this.selector] || this.category;
-    if (cat === 'lists') {cat = 'variables'; }
     ide.flushBlocksCache(cat);
     ide.refreshPalette();
 };
@@ -2584,7 +2583,7 @@ Process.prototype.doRepeat = function (counter, body) {
         outer = this.context.outerContext, // for tail call elimination
         isCustomBlock = this.context.isCustomBlock;
 
-    if (isNaN(counter) || counter < 1) { 
+    if (isNaN(counter) || counter < 1) {
 	// was '=== 0', which caused infinite loops on non-ints
         return null;
     }

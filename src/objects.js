@@ -2828,9 +2828,7 @@ SpriteMorph.prototype.customBlockTemplatesForCategory = function (category) {
         isInherited = false, block, inheritedBlocks;
 
     function addCustomBlock(definition) {
-        if (category === 'unified' || definition.category === category ||
-                (category === 'variables'
-                && contains(['lists', 'other'], definition.category))) {
+        if (category === 'unified' || definition.category === category) {
             block = definition.templateInstance();
             if (isInherited) {block.ghost(); }
             blocks.push(block);
